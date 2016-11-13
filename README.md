@@ -1,0 +1,1 @@
+# [Find longest repeating substring online](https://daniel-hug.github.io/longest-repeated-substring/)
