@@ -20,12 +20,14 @@ var output = qs('#output');
 
 // handle button click
 on(btn, 'click', function() {
-	// Create a new SuffixTree from the input text
-	var root = new SuffixTree(input.value);
+	// get the input text
+	var in = input.value;
 
-	// Get the longest repeated substring
-	var substring = root.node.getLongestRepeatedSubString();
+	// go through each line
+	var lines = in.split('\n');
+	
+	
 
-	// place the substring in the output
-	output.value = substring;
+	// give the output
+	output.value = lines[0];
 });
