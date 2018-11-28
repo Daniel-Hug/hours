@@ -1,1 +1,1 @@
-# [Find longest repeating substring online](https://daniel-hug.github.io/longest-repeated-substring/)
+# [Calculate work hours online](https://daniel-hug.github.io/hours/)
