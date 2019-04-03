@@ -23,9 +23,11 @@ on(btn, 'click', function() {
 	// get the input text
 	var in = input.value;
 
-	// go through each line
-	var lines = in.split('\n');
-	
+	// go through each day
+	var days = in.split('\n\n');
+	days.forEach(function(daySrc) {
+        var parts = daySrc.split('\n');
+    });
 	
 
 	// give the output
