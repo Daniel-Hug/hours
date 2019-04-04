@@ -52,7 +52,7 @@ on(btn, 'click', function() {try{
 	var finSrc = days.join('\n\n');
 
 	// give the output
-	output.value += finSrc;
+	output.value = finSrc;
     } catch(err) {
         output.value += err;
     }
