@@ -26,7 +26,16 @@ on(btn, 'click', function() {
 	// go through each day
 	var days = in.split('\n\n');
 	days.forEach(function(daySrc) {
-        var parts = daySrc.split('\n');
+        var dayParts = daySrc.split('\n');
+        var startT = dayParts[1];
+        var endT = dayParts[2];
+        var startTParts = startT.split(':');
+        var endTParts = endT.split(':');
+        var startHour = parseInt(startTParts[0], 10);
+        var endHour = parseInt(endTParts[0], 10);
+        var startMin = parseInt(startTParts[1], 10);
+        var endMin = parseInt(endTParts[1], 10);
+        while(startHour !== endHour)
     });
 	
 
