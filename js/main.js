@@ -11,6 +11,21 @@ function on(target, type, callback, useCapture) {
 	target.addEventListener(type, callback, !!useCapture);
 }
 
+var log = (function() {
+	function qs(selector, scope) {
+		return (scope || document).querySelector(selector);
+	}
+ 
+	var log = qs('#log');
+ 
+	return function(msg) {
+		var p = document.createElement('p');
+		p.style.whiteSpace = 'pre';
+		p.textContent = msg;
+		(log || document.body).appendChild(p);
+	};
+})();
+
 
 
 // get elements
@@ -54,3 +69,4 @@ on(btn, 'click', function() {try{
         output.value += err;
     }
 });
+log('test')
