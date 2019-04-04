@@ -24,5 +24,8 @@ function log(msg) {
 
 // handle button click
 on(btn, 'click', function() {
+    //get the input text
+    var in = input.value;
+    
 });
 log('test')
