@@ -44,10 +44,10 @@ on(btn, 'click', function() {
             finHour++;
         }
         var fin = finHour + finMin / 60;
-        return fin;
+        return daySrc + fin;
     });
-	
+	var finSrc = days.join('');
 
 	// give the output
-	output.value = lines[0];
+	output.value = finSrc;
 });
