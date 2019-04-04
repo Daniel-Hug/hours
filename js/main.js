@@ -28,6 +28,8 @@ on(btn, 'click', function() {try{
     // go through each day
     var days = inVal.split('\n\n');
     days = days.map(function(daySrc) {
+        var isLunch = daySrc.toUpperCase.indexOf('NO LUNCH') < 0;
+        var breakHrs = isLunch ? 0.5 : 0;
         var dayParts = daySrc.split('\n');
         var startT = dayParts[1];
         var endT = dayParts[2];
@@ -45,7 +47,7 @@ on(btn, 'click', function() {try{
         for(var hourCounter=startHour; hourCounter !== endHour; hourCounter = (hourCounter + 1) % 12) {
             finHour++;
         }
-        var fin = finHour + finMin / 60;
+        var fin = finHour + finMin / 60 - breakHrs;
         dayParts.push(fin + ' hours');
         return dayParts.join('\n');
     });
