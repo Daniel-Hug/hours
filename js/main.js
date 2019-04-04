@@ -21,7 +21,6 @@ function log(msg) {
 }
 
 // handle button click
-// handle button click
 on(btn, 'click', function() {try{
     // get the input text
     var inVal = input.value;
@@ -50,7 +49,7 @@ on(btn, 'click', function() {try{
         dayParts.push(fin + ' hours');
         return dayParts.join('\n');
     });
-	var finSrc = days.join('');
+	var finSrc = days.join('\n\n');
 
 	// give the output
 	output.value += finSrc;
