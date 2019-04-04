@@ -19,7 +19,7 @@ var input = qs('#input');
 var output = qs('#output');
 
 // handle button click
-on(btn, 'click', function() {
+on(btn, 'click', function() {try{
 	// get the input text
 	var in = input.value;
 
@@ -50,4 +50,7 @@ on(btn, 'click', function() {
 
 	// give the output
 	output.value = finSrc;
+    } catch(err) {
+        output.value += err;
+    }
 });
