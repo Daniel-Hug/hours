@@ -58,4 +58,3 @@ on(btn, 'click', function() {try{
         output.value += err;
     }
 });
-log('test')
