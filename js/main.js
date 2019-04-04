@@ -24,12 +24,12 @@ function log(msg) {
 
 // handle button click
 on(btn, 'click', function() {try{
-	// get the input text
-	var in = input.value;
+    // get the input text
+    var in = input.value;
 
-	// go through each day
-	var days = in.split('\n\n');
-	days = days.map(function(daySrc) {
+    // go through each day
+    var days = in.split('\n\n');
+    days = days.map(function(daySrc) {
         var dayParts = daySrc.split('\n');
         var startT = dayParts[1];
         var endT = dayParts[2];
@@ -53,7 +53,7 @@ on(btn, 'click', function() {try{
 	var finSrc = days.join('');
 
 	// give the output
-	output.value = finSrc;
+	output.value += finSrc;
     } catch(err) {
         output.value += err;
     }
