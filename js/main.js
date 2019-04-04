@@ -36,8 +36,8 @@ on(btn, 'click', function() {try{
         var endTParts = endT.split(':');
         var startHour = parseInt(startTParts[0], 10) % 12;
         var endHour = parseInt(endTParts[0], 10) % 12;
-        var startMin = parseInt(startTParts[1], 10);
-        var endMin = parseInt(endTParts[1], 10);
+        var startMin = startTParts[1] === undefined ? 0 : parseInt(startTParts[1], 10);
+        var endMin = endTParts[1] === undefined ? 0 : parseInt(endTParts[1], 10);
         var finHour = 0;
         var finMin = 0;
         for(var minCounter=startMin; minCounter !== endMin; minCounter = (minCounter + 1) % 60) {
