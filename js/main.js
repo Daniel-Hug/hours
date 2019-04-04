@@ -22,5 +22,13 @@ function log(msg) {
     output.value += msg;
 }
 
+// handle button click
+on(btn, 'click', function() {
+    // get the input text
+    var in = input.value;
 
+    // go through each day
+    var days = in.split('\n\n');
+    
+});
 log('test')
