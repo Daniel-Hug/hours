@@ -11,27 +11,16 @@ function on(target, type, callback, useCapture) {
 	target.addEventListener(type, callback, !!useCapture);
 }
 
-var log = (function() {
-	function qs(selector, scope) {
-		return (scope || document).querySelector(selector);
-	}
- 
-	var log = qs('#log');
- 
-	return function(msg) {
-		var p = document.createElement('p');
-		p.style.whiteSpace = 'pre';
-		p.textContent = msg;
-		(log || document.body).appendChild(p);
-	};
-})();
-
 
 
 // get elements
 var btn = qs('#go');
 var input = qs('#input');
 var output = qs('#output');
+
+function log(msg) {
+    output.value += msg;
+}
 
 // handle button click
 on(btn, 'click', function() {try{
