@@ -47,7 +47,8 @@ on(btn, 'click', function() {try{
             finHour++;
         }
         var fin = finHour + finMin / 60;
-        return daySrc + fin;
+        dayParts.push(fin + ' hours');
+        return dayParts.join('\n');
     });
 	var finSrc = days.join('');
 
