@@ -15,7 +15,7 @@ function parseDuration(src) {
   var isHour = src.toUpperCase().indexOf('HOUR') >= 0;
   var isMin = src.toUpperCase().indexOf('MIN') >= 0;
   var num = parseInt(src, 10);
-  if (isNan(num)) num=1;
+  if (isNaN(num)) num=1;
   if (isHour) return num;
   if (isMin) return num/60;
 }
