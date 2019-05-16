@@ -51,15 +51,9 @@ on(btn, 'click', function() {try{
         var endHour = parseInt(endTParts[0], 10) % 12;
         var startMin = startTParts[1] === undefined ? 0 : parseInt(startTParts[1], 10);
         var endMin = endTParts[1] === undefined ? 0 : parseInt(endTParts[1], 10);
-        var finHour = 0;
-        var finMin = 0;
-        for(var minCounter=startMin; minCounter !== endMin; minCounter = (minCounter + 1) % 60) {
-            finMin++;
-        }
-        for(var hourCounter=startHour; hourCounter !== endHour; hourCounter = (hourCounter + 1) % 12) {
-            finHour++;
-        }
-        var fin = finHour + finMin / 60 - breakHrs;
+        var finHour = endHour >= startHour ? endHour - startHour : 12 - startHour + endHour;
+        finHour += (endMin - startMin) / 60;
+        var fin = finHour - breakHrs;
         dayParts.push(fin + ' hours');
         return dayParts.join('\n');
     });
