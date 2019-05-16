@@ -51,7 +51,7 @@ on(btn, 'click', function() {try{
         var endHour = parseInt(endTParts[0], 10) % 12;
         var startMin = startTParts[1] === undefined ? 0 : parseInt(startTParts[1], 10);
         var endMin = endTParts[1] === undefined ? 0 : parseInt(endTParts[1], 10);
-        var finHour = endHour >= startHour ? endHour - startHour : 12 - startHour + endHour;
+        var finHour = endHour > startHour || ((endHour === startHour) && endMin > startMin) ? endHour - startHour : 12 - startHour + endHour;
         finHour += (endMin - startMin) / 60;
         var fin = finHour - breakHrs;
         dayParts.push(fin + ' hours');
